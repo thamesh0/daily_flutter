@@ -40,7 +40,8 @@ class Details extends StatelessWidget {
           if (detailList.isEmpty)
             _noTasksToday()
           else
-            _buildTimeline(detailList), // Builds the tasks timeline if there are tasks scheduled
+            _buildTimeline(
+                detailList), // Builds the tasks timeline if there are tasks scheduled
         ],
       ),
     );
