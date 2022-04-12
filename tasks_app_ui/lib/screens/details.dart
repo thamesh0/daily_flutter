@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tasks_app/utilities/calendar_view.dart';
 import 'package:tasks_app/utilities/task_timeline.dart';
 import 'package:tasks_app/utilities/tasks_list.dart';
+
 /*
 * Renders the detailed Timeline view of tasks through out the day when clicked on a particular course.
 *
@@ -19,7 +20,6 @@ class Details extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           _buildAppBar(context),
-
           SliverToBoxAdapter(
             child: Container(
               decoration: const BoxDecoration(
