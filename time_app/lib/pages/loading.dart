@@ -33,10 +33,10 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xff0d47a1),
+    return Scaffold(
+      backgroundColor: const Color(0xff0d47a1),
       body: Padding(
-          padding: EdgeInsets.all(50.0),
+          padding: const EdgeInsets.all(50.0),
           child: Center(
             child: SpinKitFadingCube(
               color: Colors.white,

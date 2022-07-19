@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'screens/create_task.dart';
+// import 'screens/create_task.dart';
 import 'screens/home.dart';
 
 void main() {
@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/dashboard',
       routes: {
         '/dashboard': (context) => const Home(),
-        '/create_task': (context) => const CreateTask(),
+        // '/create_task': (context) => const CreateTask(),
       },
     );
   }
