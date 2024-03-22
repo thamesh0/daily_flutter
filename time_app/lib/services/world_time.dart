@@ -24,26 +24,25 @@ class WorldTime {
   }
 
   Future<void> getTime() async {
-      //  TODO: Simulate a network request
-      http.Response res = await http
-          .get(Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
-      Map data = jsonDecode(res.body);
+    //  TODO: Simulate a network request
+    http.Response res =
+        await http.get(Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
+    Map data = jsonDecode(res.body);
 
-      // Get local time and offset from json data
-      String datetime = data['datetime'];
-      String offsethr = data['utc_offset'].substring(1, 3);
-      String offsetmin = data['utc_offset'].substring(4, 6);
+    // Get local time and offset from json data
+    String datetime = data['datetime'];
+    String offsethr = data['utc_offset'].substring(1, 3);
+    String offsetmin = data['utc_offset'].substring(4, 6);
 
-      // Create a datetime object
-      DateTime now = DateTime.parse(datetime);
+    // Create a datetime object
+    DateTime now = DateTime.parse(datetime);
 
-      bool? chk = data['utc_offset'].substring(0, 1) == '+';
-      chk
-          ? now = addOffset(now, offsethr, offsetmin)
-          : now = subOffset(now, offsethr, offsetmin);
-      // Set the timer
-      isDaytime = now.hour > 6 && now.hour < 19;
-      time = DateFormat.jm().format(now);
-
+    bool? chk = data['utc_offset'].substring(0, 1) == '+';
+    chk
+        ? now = addOffset(now, offsethr, offsetmin)
+        : now = subOffset(now, offsethr, offsetmin);
+    // Set the timer
+    isDaytime = now.hour > 6 && now.hour < 19;
+    time = DateFormat.jm().format(now);
   }
 }
